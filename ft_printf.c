@@ -56,13 +56,16 @@ void	flags(va_list args, const char flag, int *len)
 		ptr = va_arg(args, void *);
 		ft_putadd(ptr, len);
 	}
+		else
+			ft_putchar(flag,len);
 }
 
 int	ft_printf(const char *format, ...)
 {
 	va_list	args;
 	int		len;
-
+	if(format == NULL)
+		return -1;
 	va_start(args, format);
 	len = 0;
 	while (*format)
